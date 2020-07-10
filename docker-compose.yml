@@ -1,0 +1,13 @@
+version: '3'
+services:
+  amazonlinux:
+    build:
+      context: .
+      args:
+        USER: ec2-user
+    stdin_open: true
+    tty: true
+    ports:
+      - "2022:22"
+    volumes:
+      - .:/share

@@ -1,0 +1,17 @@
+- hosts: base
+  become: true
+  tasks:
+    - name: kernel update
+      yum:
+        name: kernel
+        state: latest
+
+    - name: eject
+      shell: eject
+
+    - name: reboot
+      reboot:
+
+    - debug:
+        msg:
+        - "next: make insert_guest_iso"
